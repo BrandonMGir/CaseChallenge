@@ -1,0 +1,1 @@
+SELECT CaseNumber, Subject FROM Case WHERE Status != 'Closed'
