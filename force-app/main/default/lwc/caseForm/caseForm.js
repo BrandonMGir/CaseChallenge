@@ -23,6 +23,7 @@ export default class CaseForm extends LightningElement {
         .then((res) => {
             this.responseMessage = 'Created new Case';
             this.dispatchEvent(new CustomEvent('createevent'));
+            console.log('RESPONSE: ' + res);
         })
         .catch((e) => {
             console.log(e);

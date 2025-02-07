@@ -1,10 +1,9 @@
 <template>
     <lightning-card>
         <c-case-form oncreateevent={refreshList}></c-case-form>
-
-        <lightning-datatable hide-checkbox-column key-field="id" data={openCases.data} columns={columns}
+        <p>{message}</p>
+        <lightning-datatable hide-checkbox-column key-field="Id" data={openCases.data} columns={columns}
             draft-values={draftValues} onsave={save}>
         </lightning-datatable>
-
     </lightning-card>
 </template>

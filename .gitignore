@@ -43,3 +43,5 @@ $RECYCLE.BIN/
 **/__pycache__/
 **/.venv/
 **/venv/
+force-app/main/default/lwc/caseList/__tests__/
+force-app/main/default/lwc/caseForm/__tests__/

@@ -1,4 +1,4 @@
-import { LightningElement, wire } from 'lwc';
+import { api, LightningElement, wire } from 'lwc';
 import getOpenCases from '@salesforce/apex/CaseHelper.getOpenCases';
 import updateCases from '@salesforce/apex/CaseHelper.updateCases';
 import {refreshApex} from '@salesforce/apex';
@@ -25,15 +25,10 @@ export default class CaseList extends LightningElement {
 
     save(event){
         this.draftValues = event.detail.draftValues;
-
+        //console.log('UPDATE: ' + JSON.stringify(this.draftValues));
         let newCases = [];
 
-        this.draftValues.forEach((el) => {
-            let row  = Number(el.id.substring(4));
-            newCases.push({Id: this.openCases.data[row].Id, Subject: el.Subject});
-        });
-
-        updateCases({cases: newCases})
+        updateCases({cases: this.draftValues})
             .then((res) =>{
                 this.message = 'Updated case'
                 this.refreshList();
